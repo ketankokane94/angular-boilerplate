@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
-
+import {AppService} from '../services/app.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,13 +8,11 @@ import {MenuItem} from 'primeng/api';
 })
 export class HeaderComponent implements OnInit {
 
+  constructor( private appService:AppService)  { }
+
   items: MenuItem[];
 
   ngOnInit() {
-      this.items = [
-        {label:'Bio',icon:'fa-user'},
-          {label: 'Stats', icon: 'fa-bar-chart',url:'#/csrScreening'},
-          {label: 'Calendar', icon: 'fa-calendar',url:'#/gcarsSearch'}
-      ];
+    this.items = this.appService.getHeaderUrl();    
   }
 }

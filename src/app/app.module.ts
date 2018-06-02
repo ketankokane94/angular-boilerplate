@@ -9,6 +9,8 @@ import { CsrAppComponent } from './csr-screening/csr-app/csr-app.component';
 import { GcarsAppComponent } from './gcars-search/gcars-app/gcars-app.component';
 import { HeaderComponent } from './header/header.component'
 
+import {AppService} from './services/app.service';
+
 @NgModule({
   
   imports: [
@@ -22,7 +24,7 @@ import { HeaderComponent } from './header/header.component'
     GcarsAppComponent,
     HeaderComponent
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
